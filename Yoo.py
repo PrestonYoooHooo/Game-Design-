@@ -17,12 +17,14 @@ star= int(input("please enter number of stars")) #allow to get values from the u
 line=star 
 space=line-star
 for lncounter in range(line):
+    for counter in range(star):
+        print("* ",end=" ")
     for counter in range(space):
         print("  ", end=" ")
     for counter in range(star):
         print("* ",end=" ")
     print()
     star-=1 #star = star-1
-    space+=1
+    space+=2
 print(" ",end=" ")
 print("Thank you")

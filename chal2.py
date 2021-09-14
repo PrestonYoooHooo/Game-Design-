@@ -8,9 +8,9 @@ lastdig3=num%dig3
 print("the last digit is")
 print(lastdig)
 print("the two last digits are")
-print(lastdig2,)
+print(lastdig2)
 print("the last three digits are")
-print(lastdig3,)
+print(lastdig3)
 
 
 

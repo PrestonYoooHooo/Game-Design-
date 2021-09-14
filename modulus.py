@@ -2,7 +2,7 @@
 #Learning about operatorss
 
 # + - / * Add, sub, div, multi,
-# ** exp
+# ** exponents
 # % remander of division
 
 #find an even number

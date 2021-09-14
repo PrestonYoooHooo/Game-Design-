@@ -14,7 +14,7 @@ test4=87
 #add a new test, and new vari to add the test
 #add a new variable for numver of test
 test5=91
-Sum=test1+test2+test3_test4+test5
+Sum=test1+test2+test3+test4+test5
 num=5
 #declare a average variable
 average=0

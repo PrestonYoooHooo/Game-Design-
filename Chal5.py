@@ -17,7 +17,7 @@ for i in range(10):
             check=False
             if check: 
                 print("congratuations you got the number right please run again if you want to try again!")
-                print("You won in ", i+1)
+                print("You won in ", i+1 ,"tries")
                 break
         else:
             print("sorry that wasn't right, guess again!")

@@ -22,4 +22,6 @@ for i in range(10):
             print("sorry that wasn't right, guess again!")
     else: 
         print("Sorry please enter a whole number")
-print("Sorry you are out of guesses try again!")
+print("Sorry you are out of guesses the number is:")
+print(randy)
+

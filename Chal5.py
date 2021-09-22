@@ -16,9 +16,10 @@ for i in range(10):
         except ValueError:
             check=False
             if check: 
-                print("congratuations you got the number right!")
-                os.kill
+                print("congratuations you got the number right please run again if you want to try again!")
+                os.killpg
         else:
             print("sorry that wasn't right, guess again!")
     else: 
         print("Sorry please enter a whole number")
+print("Sorry you are out of guesses try again!")

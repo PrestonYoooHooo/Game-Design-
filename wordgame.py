@@ -10,14 +10,14 @@ while ("y" in answer):
     counter=1
     guess=input("please enter  7 letter word that starts with p")
     while(guess !=word and counter <10):
-            if guess==word:
-                print("your right! The word is", word)
-                print("You took", counter, "tries")
-                break
-            else:
                 counter=+1
                 print("I am sorry that is not the right word")
-            guess=input("please enter  7 letter word that starts with p")
+                guess=input("please enter  7 letter word that starts with p")
+    if (counter<10):
+                print("your right! The word is", word)
+                print("You took", counter, "try/triess")
+    else:
+        print("sorry you excceded 10 guesses")
     answer= input("Would you like to play my game again?")
 print("thank you for playing come back soon,", name)
     

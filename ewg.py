@@ -10,13 +10,13 @@ print("Hi," + name)
 answer= input(name + ",Would you like to play my game")
 answer= (answer).lower ()
 while ("y" in answer): #need to add menu in here
-    print("########################")
+    print("*######################*")
     print("#         Menu         #")
     print("#      1 for pets      #")
     print("#     2 for fruits     #")
     print("#     3 for shapes     #")
     print("#      4 to quit       #")
-    print("########################")
+    print("*######################*")
     answer2=input ("pick 1,2,3, or 4 to choose a catagory or to quit the game")
     if answer2 == "4":
         break

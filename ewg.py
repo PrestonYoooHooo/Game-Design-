@@ -6,7 +6,7 @@ pets=["dog", "cat", "bird", "gerbil"]
 fruits=["apple", "pear", "berries", "kiwi",]
 name=input("What is your name ")
 print("Hi," + name)
-answer= input(name + "Would you like to play my game")
+answer= input(name + ",Would you like to play my game")
 answer= (answer).lower ()
 while ("y" in answer): #need to add menu in here
     print("Menu")
@@ -38,6 +38,7 @@ while ("y" in answer): #need to add menu in here
                 print("sorry guess again")
             print ("\n")
             if check==False:
-                print("great job you won with ", turns, "turns left!!!")
-    answer=input(name +"do you want to play again?")
+                guesses+=newguess
+                print("great job you won with", turns, "turns left!!!")
+    answer=input(name + ",do you want to play again?")
 print(name + ",Thank you for playing")

@@ -24,15 +24,14 @@ strString ='Study.con is a wonderful resource'
 #print(result)
 #Answer 6: 1
 #Question 7: What escape sequence is used for a tab? Write a print statement to demonstate
-#print('Hi')
-#print ('\t')
-#print('bye')
-#Answer 7: tabs extra space between the lines
+#print 'apple\torange'
+#Answer 7: #apple	orange tabs extra sspace
 #Question 8: What escape sequence is used for a new line? Write a print statement to demonstate
-#print('Hi')
-#print ('\n')
-#print('bye')
-#Answer 8: adds more even space between the lines
+#print 'apple\norange'
+#Answer 8: 
+#apple
+#orange 
+#makes new line for next word
 #Question 9:What is the concatenation operator? Write a code to demonstrate
 #number=10
 #print('hang',+number)
@@ -44,7 +43,7 @@ MyList= ['0','1','2','3','4','6','7','8','9','10']
 #MyList.insert(5)= '5'
 #MyList[5] = '5'
 #print(MyList)
-#Answer 10: givess list with 5 MyList.insert(5,'5') was right but i forgot the print command
+#Answer 10: gives list with 5 MyList.insert(5,'5') was right but i forgot the print command
 
 
 

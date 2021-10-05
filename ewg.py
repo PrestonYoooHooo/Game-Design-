@@ -53,6 +53,6 @@ while ("y" in answer): #need to add menu in here
             print ("\n")
         else:
             # guesses+=newguess
-            print("great job you won with", turns, "guessses left!!!")
+            print("great job you won with", turns, "guesses left!!!")
     answer=input(name + ",do you want to play again?")
 print(name + ",Thank you for playing")

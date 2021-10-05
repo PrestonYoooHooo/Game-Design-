@@ -43,7 +43,7 @@ while ("y" in answer): #need to add menu in here
         if guessLen==len(word):
             check=False
         if check:
-            newguess=input ("\n please enter a letter, you have", turns,"attemps left")
+            newguess=input ("\n please enter a letter")
             if newguess in word:
                 guesses+=newguess
                 print ("good guess")

@@ -1,6 +1,7 @@
 #Preston Yoo
 #9-30-21
-import time, os 
+#same as ewg but scoreoard date and using text file to store information
+
 import random, os
 os.system('cls')
 pets=["dog", "cat", "bird", "gerbil"]
@@ -10,12 +11,7 @@ name=input("What is your name ")
 print("Hi," + name)
 answer= input(name + ",Would you like to play my game")
 answer= (answer).lower ()
-Tim=time
 while ("y" in answer): #need to add menu in here
-    print ("High Scores:")
-    myFile=open('score.txt','r')
-    print(myFile.read)()
-    myFile.close
     print("*######################*")
     print("#         Menu         #")
     print("#      1 for pets      #")
@@ -35,7 +31,8 @@ while ("y" in answer): #need to add menu in here
     word=(word).lower()
     turns=len(word)+2
     check=True
-    guesses=' ' 
+    guesses=' '
+    
     while (turns>0 and check):
         guessLen=0
         for letter in word:
@@ -58,12 +55,6 @@ while ("y" in answer): #need to add menu in here
             print ("\n")
         else:
             # guesses+=newguess
-            score=3*(len(word))+turns
-            if score>25:
-                myFile=open('score.txt','a')
-                myFile.write ("\n") 
-                myFile.write(name+":"+str(score))
-                myFile.close()
-            print("great job you won with", turns, "guesses left!!!Your score was:",score)
+            print("great job you won with", turns, "guesses left!!!")
     answer=input(name + ",do you want to play again?")
 print(name + ",Thank you for playing")

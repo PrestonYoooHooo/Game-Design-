@@ -3,7 +3,7 @@
 import time, os 
 import random, os
 os.system('cls')
-pets=["dog", "cat", "bird", "gerbil"]
+pets=["dog", "cat", "bird", "gerbil","goldfish",]
 fruits=["apple", "pear", "berries", "kiwi",]
 shapes=["square", "triangle", "circle", "rectangle",]
 name=input("What is your name ")
@@ -18,9 +18,9 @@ while ("y" in answer): #need to add menu in here
     myFile.close
     print("*######################*")
     print("#         Menu         #")
-    print("#      1 for pets      #")
-    print("#     2 for fruits     #")
-    print("#     3 for shapes     #")
+    print("#   1 to guess pets    #")
+    print("#   2 to guess fruits  #")
+    print("#   3 to guess shapes  #")
     print("#      4 to quit       #")
     print("*######################*")
     answer2=input ("pick 1,2,3, or 4 to choose a catagory or to quit the game")
@@ -58,7 +58,7 @@ while ("y" in answer): #need to add menu in here
             print ("\n")
         else:
             # guesses+=newguess
-            score=3*(len(word))+turns
+            score=3*(len(word))+5*turns
             if score>25:
                 myFile=open('score.txt','a')
                 myFile.write ("\n") 

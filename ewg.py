@@ -1,20 +1,23 @@
 #Preston Yoo
 #9-30-21
-import time, os 
-import random, os
+import random, os#allows for random choice
 os.system('cls')
 pets=["dog", "cat", "bird", "gerbil","goldfish","rock"]
 fruits=["apple", "pear", "berries", "kiwi","mango","watermelon",]
-shapes=["square", "triangle", "circle", "rectangle","octagon","nonagon",]
-name=input("What is your name ")
+shapes=["square", "triangle", "circle", "rectangle","octagon","nonagon",]#Defines the lists and the possible answers
+name=input("What is your name ")#to be nice and for scoreboard
 print("Hi," + name)
-answer= input(name + ",Would you like to play my game")
-answer= (answer).lower ()
-Tim=time
-Topscore=0
+answer= input(name + ",Would you like to play my game")#starts the while y loop
+answer= (answer).lower ()#forces it into lowercase
+Topscore=0#to have baseline
 check=True
-while check is True:
-    while ("y" in answer): #need to add menu in here
+def scoreBoard():#create our object file so we can open our scoreboard
+    myScore=open('score.txt','r')
+    print(myScore.read)()
+    myScore.close()
+    answer=input("Are you ready to leave?")
+while check is True:#this loop is here to prevent the Topscore from reverting back to 0
+    while ("y" in answer): #this loop will allow replay ability as long as the user says yes when promopted about playing again
         print("*######################*")
         print("#         Menu         #")
         print("#   1 to guess pets    #")
@@ -23,20 +26,17 @@ while check is True:
         print("# 4 to see scoreboard  #")
         print("#      5 to quit       #")
         print("*######################*")
-        answer2=input ("pick 1,2,3,4, or 5 to choose a catagory or to quit the game")
-        if answer2 == "5":
+        answer2=input ("pick 1,2,3,4, or 5 to choose a catagory or to quit the game")#1-3 are catagories and 4 is scoreboard while 5 kills the program
+        if answer2 == "5":#breaks loop and nothing is outside so the program ends
             break
-        if answer2 == "4":
-            print ("High Scores:")
-            myFile=open('score.txt','r')
-            print(myFile.read)()
-            myFile.close #need to fix read problem
+        elif answer2 == "4":
+            scoreBoard()
             answer=input ("say yes when you want to go back to the menu")
-        if answer2 == "3":
+        elif answer2 == "3":#each of these are a random choice command that randomly choses a word from this list
             word=random.choice(shapes)
-        if answer2 == "2":
+        elif answer2 == "2":
             word=random.choice(fruits)
-        if answer2 == "1":
+        elif answer2 == "1":
             word=random.choice(pets)
         word=(word).lower()
         turns=len(word)+2
@@ -65,11 +65,11 @@ while check is True:
             else:
                 # guesses+=newguess
                 score=3*(len(word))+5*turns
-                if score<Topscore:
+                if score>Topscore:
                     score=Topscore
                 print("great job you won with", turns, "guesses left!!!Your score was:",score)
         answer=input(name + ",do you want to play again?")
-    myFile=open('score.txt', 'a')
+    myFile=open('score.txt', 'a') 
     myFile.write(name + "\t Highest score:\t"+str(Topscore))
     myFile.close() 
     print("your highest score is:",Topscore)

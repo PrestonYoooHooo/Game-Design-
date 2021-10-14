@@ -61,15 +61,15 @@ def Menu():#function to bring player back to menu and start a new game
         sel=int(sel)
     else: 
         sel=input("Sorry please enter an integer")
-    try:
-        sel<6
+    try: #makes sure the integer is in acceptable range
+        sel<6 and sel<0
         check= True 
     except ValueError:
         check=False
     if (check):
         sel<6 and sel>0
     else: 
-        sel=input("Sorry please enter a number between 1-5")
+        sel=input("Sorry please enter an integer between 1-5")
     if sel==5:
         Exitnow()
     elif sel ==4:#create command to return to menu

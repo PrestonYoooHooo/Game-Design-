@@ -28,7 +28,7 @@ def scoreBoard():#function for scoreboard to be read and then open menu again
     myScore.close()
     answer2=input("Are you ready to return to the menu?")
     if 'y' in answer2:
-        Menu() #fun sendss back to menu
+        Menu() #fun sends back to menu
 def Exitnow():#function for ending the game and updating the player's highest score to the file
     myFile=open('score.txt', 'a') 
     myFile.write(name + "\t Highest score:\t"+str(maxScore))
@@ -96,7 +96,6 @@ while sel==1 or sel==2 or sel==3:
     print(name, " Good Luck! you have 5 chances to guess")
     word= selWord(sel)
     word = word.lower()
-    print(word)
     wordCount=len(word)
     turns= wordCount+2  #depending on the lenght if the word
     letCount=0 #variable to check if the user guessed the word

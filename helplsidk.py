@@ -67,7 +67,7 @@ def Menu():#function to bring player back to menu and start a new game
     except ValueError:
         check=False
     if (check):
-        sel<6
+        sel<6 and sel>0
     else: 
         sel=input("Sorry please enter a number between 1-5")
     if sel==5:

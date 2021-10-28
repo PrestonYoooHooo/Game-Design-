@@ -34,15 +34,7 @@ def display_Words(message,x,y):
     win.blit(text,(x,y))
     py.display.update()
     py.time.delay(100)
-run=True
-while run:
-    for eve in py.event.get():
-        if eve.type ==py.QUIT:
-            run = False
-    win.fill(White)
-    display_Title("Settings", width/2-text.get_width()/2,40)#the atcual message of function we can change
-    py.time.delay(200)
-    display_Words
+def wordy ():
     x=width/2-text.get_width()/2-80
     y=height/2-text.get_height()/2-80
     square=py.Rect (x,y,wbox,wbox,)
@@ -55,5 +47,15 @@ while run:
     display_Words("Color",width/2-text.get_width()/2,400)
     py.draw.rect(win, objColor,square)
     display_Words("On/Off Sound",width/2-text.get_width()/2,500)
+run=True
+while run:
+    for eve in py.event.get():
+        if eve.type ==py.QUIT:
+            run = False
+    win.fill(White)
+    display_Title("Settings", width/2-text.get_width()/2,40)#the atcual message of function we can change
+    py.time.delay(200)
+    
+
 
 

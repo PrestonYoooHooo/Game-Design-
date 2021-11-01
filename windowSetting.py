@@ -13,6 +13,8 @@ sizeMessages=["700*700", "800*800", "900*900", "1000*1000","Back"]
 BacoMessages=["Red","Blue","White","Orange","Back"]
 CoMessages=['Orange','Red','White','Blue','Back']
 ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
+InMessages= ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Back']
+PlMessages= ['Level 1', 'Level 2', 'Back']
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -90,6 +92,8 @@ while run:
                     win.fill(WHITE)
                     create_NewWindow("Play Game")
                     display_Title("Play Game",40)
+                    Menu_function(PlMessages,150)
+                    counter+=7
                     pygame.time.delay(100)
                 if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 0:
                     pygame.event.clear(pygame.MOUSEBUTTONDOWN)
@@ -106,6 +110,7 @@ while run:
                     win.fill(WHITE)
                     create_NewWindow("Instructions")
                     display_Title("Instructions",40)
+                    Menu_function(InMessages,150)
                     pygame.time.delay(100)
                     counter+=5
                 if xp>x and xp<x+wbox and yp>y and yp<545 and yp>445 and counter is 0:
@@ -114,6 +119,7 @@ while run:
                     win.fill(WHITE)
                     create_NewWindow("Score Board")
                     display_Title("Score Board",40)
+                    Menu_function(ScMessages,150)
                     pygame.time.delay(100)
                     counter+=6
                 if xp>x and xp<x+wbox and yp>y and yp<645 and yp>545 and counter is 0:
@@ -297,18 +303,25 @@ while run:
                     xp=0
                     yp=0 
                     win.fill(WHITE)
-                    display_Title("Settings",y)
-                    Menu_function(settingMessages,150)
+                    display_Title("Testy Game",y)
+                    Menu_function(gameMessages,150)
                     counter-=5
                     pygame.time.delay(100)
                 if xp >x and xp<x+wbox and yp>y and yp<645 and yp>545 and counter is 6:
                     xp=0
                     yp=0 
                     win.fill(WHITE)
-                    display_Title("Settings",y)
-                    Menu_function(settingMessages,150)
+                    display_Title("Testy Game",y)
+                    Menu_function(gameMessages,150)
                     counter-=6
                     pygame.time.delay(100)
+                if xp>x and xp<x+wbox and yp>y and yp<545 and yp>445 and counter is 7:
+                    xp=0
+                    yp=0 
+                    win.fill(WHITE)
+                    display_Title("Testy Game",y)
+                    Menu_function(gameMessages,150)
+                    counter-=7 
                     
 
                 

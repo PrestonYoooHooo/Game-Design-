@@ -315,7 +315,7 @@ while run:
                     Menu_function(gameMessages,150)
                     counter-=6
                     pygame.time.delay(100)
-                if xp>x and xp<x+wbox and yp>y and yp<545 and yp>445 and counter is 7:
+                if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
                     xp=0
                     yp=0 
                     win.fill(WHITE)

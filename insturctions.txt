@@ -1,0 +1,13 @@
+1.Get a friend to play with
+2.Try to collect 5 flags before your friend does
+3.You can blast your oppnent back with your blaster but its a bit slow
+4.Win and have fun with your now bickering friend
+                    #basically i had the same problem but she did something that i don't really know about you may have to ask her personally
+            #myFile=open ('insturctions.txt','r')
+            #yi=150
+            #for line in myFile.readlines():
+                #text=INSTRUCTIONS_FONT.render(line, 1, BLACK)
+                #win.blit(text,(40,yi))
+                #pygame.display.update
+                #pygame.time.delay(100)
+               # yi+=50

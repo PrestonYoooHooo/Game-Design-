@@ -13,7 +13,7 @@ sizeMessages=["700*700", "800*800", "900*900", "1000*1000","Back"]
 BacoMessages=["Red","Blue","White","Orange","Back"]
 CoMessages=['Orange','Red','White','Blue','Back']
 ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
-InMessages= ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Back']
+InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
@@ -29,6 +29,7 @@ wbox=25
 hbox=30
 x=70
 y=150
+
 win=pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption('Setting Window')
 square=pygame.Rect(x,y,wbox,hbox)
@@ -56,7 +57,9 @@ def display_Title(message,y):#that comes with def
 def Menu_function(Messages,y):
     pygame.time.delay(100)
     square.y=y
-    ym=y#this works because the other xm is in another function sso it is sepaerate aka a local variable
+    xy=15
+    ym=y-xy
+    #this works because the other xm is in another function sso it is sepaerate aka a local variable
     xm=x+wbox+10
 
     for i in range (0,len(Messages)):
@@ -67,7 +70,7 @@ def Menu_function(Messages,y):
         pygame.display.update()
         pygame.time.delay(100)
         ym+=100
-        square.y=ym
+        square.y=ym+15
     
 display_Title("TestyGame",y)
 Menu_function(gameMessages,150)
@@ -322,7 +325,3 @@ while run:
                     display_Title("Testy Game",y)
                     Menu_function(gameMessages,150)
                     counter-=7 
-                    
-
-                
-

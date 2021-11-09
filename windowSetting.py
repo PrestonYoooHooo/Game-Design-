@@ -116,6 +116,16 @@ while run:
                     Menu_function(InMessages,150)
                     pygame.time.delay(100)
                     counter+=5
+            #myFile=open ('insturctions.txt','r')
+            #yi=150
+            #for line in myFile.readlines():
+                #text=INSTRUCTIONS_FONT.render(line, 1, BLACK)
+                #win.blit(text,(40,yi))
+                #pygame.display.update
+                #pygame.time.delay(100)
+               # yi+=50
+            #myFile=close
+
                 if xp>x and xp<x+wbox and yp>y and yp<545 and yp>445 and counter is 0:
                     xp=0
                     yp=0                  

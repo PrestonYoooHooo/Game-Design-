@@ -9,14 +9,36 @@
 #K_LEFT   right arrow
 import os
 import pygame as py
-
+win = py.display.set_mode((900,800))
 #first thing initiate py
 py.init()
 #create window
 height= 800
 width = 900
+x=50 
+y=400 
+right=False
+left=True
+walkCount=0
+walkLeft={py.image.load('images/Pygame-Tutorials-master/Game/L1.png'), py.image.load('images/Pygame-Tutorials-master/Game/L2.png'), py.image.load('images/Pygame-Tutorials-master/Game/L3.png'),py.image.load('images/Pygame-Tutorials-master/Game/L4.png'), py.image.load('images/Pygame-Tutorials-master/Game/L5.png'), py.image.load('images/Pygame-Tutorials-master/Game/L6.png'), py.image.load('images/Pygame-Tutorials-master/Game/L7.png'), py.image.load('images/Pygame-Tutorials-master/Game/L8.png'), py.image.load('images/Pygame-Tutorials-master/Game/L9.png')}
+walkRight={py.image.load('images/Pygame-Tutorials-master/Game/R1.png'),py.image.load('images/Pygame-Tutorials-master/Game/R2.png'), py.image.load('images/Pygame-Tutorials-master/Game/R3.png'),py.image.load('images/Pygame-Tutorials-master/Game/R4.png'),py.image.load('images/Pygame-Tutorials-master/Game/R5.png'),py.image.load('images/Pygame-Tutorials-master/Game/R6.png'),py.image.load('images/Pygame-Tutorials-master/Game/R7.png'),py.image.load('images/Pygame-Tutorials-master/Game/R8.png'),py.image.load('images/Pygame-Tutorials-master/Game/R9.png')}
+def redrawGameWindow():
+    global walkCount
+    if walkCount + 1 >= 27:
+            walkCount = 0
+            win.blit(bg, (0,0))
+    if left:  
+            win.blit(walkLeft[walkCount//3], (x,y))
+            walkCount += 1                          
+    elif right:
+            win.blit(walkRight[walkCount//3], (x,y))
+            walkCount += 1
+    else:
+            win.blit(standing, (x, y))
+            walkCount = 0
 screen=py.display.set_mode((width, height))
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0) }
+standing= py.image.load('images/Pygame-Tutorials-master/Game/standing.png')
 myColor =colors.get('purple')
 lyColor=colors.get('blue')
 screen.fill(myColor)
@@ -41,13 +63,32 @@ run=True
 bg=py.image.load("images/bgSmaller.jpg")
 FIGx=300
 FIGy=300
-FIG=py.image.load("images/Pygame-Tutorials-master/Game/L1.png")
+FIG=py.image.load("images/Pygame-Tutorials-master/Game/standing.png")
 screen.blit (bg, (0,0))
 screen.blit(FIG,(FIGx,FIGy))
 py.display.flip#have to use flip for images
 jumpCount=10
 jump=False
 faspeed=20
+def redrawGameWindow():
+    # We have 9 images for our walking animation, I want to show the same image for 3 frames
+    # so I use the number 27 as an upper bound for walkCount because 27 / 3 = 9. 9 images shown
+    # 3 times each animation.
+    global walkCount
+    
+    win.blit(bg, (0,0))  
+
+    if walkCount + 1 >= 27:
+        walkCount = 0
+        
+    if left:  # If we are facing left
+        win.blit(walkLeft[walkCount//3], (x,y))  # We integer divide walkCounr by 3 to ensure each
+        walkCount += 1                           # image is shown 3 times every animation
+    elif right:
+        win.blit(walkRight[walkCount//3], (x,y))
+        walkCount += 1
+    else:
+        win.blit(FIG, (x, y))
 while run:
     py.time.delay(100) #milliseconds 
     for anyThing in py.event.get(): #variable for anytrhing that happneds in pygame to listen to keyboard and mouse
@@ -59,13 +100,26 @@ while run:
     if keyPressed[py.K_RIGHT]:
         if FIGx==boldX-50 and FIGy>540:
             FIGx=550
-        else:
-            FIGx +=speedx
+            left = True
+            right = False
+        else: 
+            left = False
+            right = True
+            FIGx+=speedx
+            walkCount = 0 
     if keyPressed[py.K_LEFT]: 
         if FIGx==boldX+80 and FIGy>540:
             FIGx=boldX+80
+            left=False
+            right=True
         else:
+            left =True
+            right=False
             FIGx -=speedx #moves square slightly to the right
+    if left==False and right==False:
+        left = False
+        right = False
+        walkCount = 0
     if not jump:
         if keyPressed[py.K_UP]: 
             if FIGy == boldY+100 and FIGx >450 and FIGx<550:
@@ -101,6 +155,7 @@ while run:
     #screen.fill(myColor)
     screen.blit (bg, (0,0))
     screen.blit(FIG,(FIGx,FIGy))
+    redrawGameWindow
     py.draw.rect(screen,lyColor,bolder)
     py.display.flip()
 py.quit()

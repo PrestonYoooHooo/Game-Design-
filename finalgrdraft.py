@@ -15,6 +15,19 @@ CoMessages=['Orange','Red','White','Blue','Back']
 ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
 InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
+walkRight = [pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'), pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 9.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
+walkLeft = [pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 5.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 6.jpeg')]
+StL = [pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')]
+StR = [pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
+sebg = [pygame.image.load('images/images copy.jpg')]
+eibg = [pygame.image.load('images/images copy 2.jpg')]
+nibg = [pygame.image.load('images/images copy 3.jpg')]
+tebg = [pygame.image.load('images/images.jpg')]
+sebg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700.jpg')]
+eibg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy.jpg')]
+nibg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 2.jpg')]
+tebg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 3.jpg')]
+lamon = [pygame.image.load('images/95-957201_lava-muk-pokemon-lava.jpg')]
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -37,6 +50,7 @@ square=pygame.Rect(x,y,wbox,hbox)
 TITLE_FONT=pygame.font.SysFont('comicsans',80)
 SubTitle=pygame.font.SysFont('comicsans', 40, italic=True)
 MENU_FONT=pygame.font.SysFont('comicsans',40)
+INSTUR_FONT=pygame.font.SysFont('comicsans',30)
 text=TITLE_FONT.render('message',1,BLACK)
 counter=0
 def create_NewWindow(winTitile):

@@ -28,6 +28,9 @@ eibg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy.jp
 nibg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 2.jpg')]
 tebg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 3.jpg')]
 lamon = [pygame.image.load('images/95-957201_lava-muk-pokemon-lava.jpg')]
+p1 = [pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')]
+p2 = [pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')]
+fl = [pygame.image.load('images/Unknown.png')]#I define/load all of my picture variables 
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -53,6 +56,53 @@ MENU_FONT=pygame.font.SysFont('comicsans',40)
 INSTUR_FONT=pygame.font.SysFont('comicsans',30)
 text=TITLE_FONT.render('message',1,BLACK)
 counter=0
+walkCount1= 0
+walkCount2= 0
+left=False
+right=False
+hitstun=False 
+lastr1= False
+lastl1= False 
+lastr2= False
+lastl2= False
+FIGx1=50
+FIGy1=HEIGHT-HEIGHT-50
+FIGx2=WIDTH-50
+FIGy2= HEIGHT-50
+def redrawGameWindowforp1():
+    global walkCount1 
+    if walkCount1 + 1 >= 27:
+        walkCount = 0
+        
+    if left==True and right==False:  
+        win.blit(walkLeft[walkCount//3], (FIGx1,FIGy1))
+        walkCount += 1                          
+    elif right==True and left ==False:
+        win.blit(walkRight[walkCount//3], (FIGx1,FIGy1))
+        walkCount += 1
+    elif lastr1== True and lastl1 == False:
+        win.blit(StR, (FIGx1, FIGy1))
+        walkCount = 0
+    else:
+        win.blit(StL,FIGx1,FIGy1)
+        walkCount=0
+def redrawGameWindowforp2():
+    global walkCount1 
+    if walkCount1 + 1 >= 27:
+        walkCount = 0
+        
+    if left==True and right==False:  
+        win.blit(walkLeft[walkCount//3], (FIGx2,FIGy2))
+        walkCount += 1                          
+    elif right==True and left ==False:
+        win.blit(walkRight[walkCount//3], (FIGx2,FIGy2))
+        walkCount += 1
+    elif lastr2== True and lastl2 == False:
+        win.blit(StR, (FIGx2, FIGy2))
+        walkCount = 0
+    else:
+        win.blit(StL,FIGx2,FIGy2)
+        walkCount=0
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
     win.fill(WHITE)
@@ -89,7 +139,7 @@ def Menu_function(Messages,y):
 display_Title("TestyGame",y)
 Menu_function(gameMessages,150)
 run=True
-
+play=True
 while run:
     for eve in pygame.event.get():
         if eve.type==pygame.QUIT:
@@ -104,15 +154,15 @@ while run:
                 print (x,y)
                 #if py.Rect.collidepoint(square,(mouse_pos)):
                 if xp >x and xp<x+wbox and yp>y and yp<245 and counter is 0:
-                    xp=0
+                    xp=0#this resets the mouse postion so double pressing dossen't occur
                     yp=0
-                    win.fill(WHITE)
+                    win.fill(WHITE)#it says white but it will change to any background color you chose
                     create_NewWindow("Play Game")
                     display_Title("Play Game",40)
                     Menu_function(PlMessages,150)
                     counter+=7
                     pygame.time.delay(100)
-                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 0:
+                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 0:# the counter system allows us to see where we are and along with mouse postion allows for smooth and clean transitions between screens
                     pygame.event.clear(pygame.MOUSEBUTTONDOWN)
                     xp=0
                     yp=0
@@ -190,7 +240,7 @@ while run:
                 if xp >x and xp<x+wbox and yp>y and yp<245 and counter is 2:
                     xp=0
                     yp=0
-                    HEIGHT=700
+                    HEIGHT=700#sets height
                     WIDTH=700
                     win=pygame.display.set_mode((WIDTH,HEIGHT))
                     create_NewWindow("Screen Size")
@@ -342,6 +392,24 @@ while run:
                     Menu_function(gameMessages,150)
                     counter-=6
                     pygame.time.delay(100)
+                if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7:
+                    if HEIGHT==700:
+                        win.blit(sebg,(0,0))
+                    if HEIGHT==800:
+                        win.blit(eibg(0,0))
+                    if HEIGHT==900:
+                        win.blit(nibg(0,0))
+                    if HEIGHT==1000:
+                        win.blit(tebg (0,0))
+                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7:
+                    if HEIGHT==700:
+                        win.blit(sebg2,(0,0))
+                    if HEIGHT==800:
+                        win.blit(eibg2(0,0))
+                    if HEIGHT==900:
+                        win.blit(nibg2(0,0))
+                    if HEIGHT==1000:
+                        win.blit(tebg2 (0,0))
                 if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
                     xp=0
                     yp=0 

@@ -45,7 +45,20 @@ wbox=25
 hbox=30
 x=70
 y=150
-
+boldx1=200
+boldy1=200
+boldx2=WIDTH-200
+boldy2=200
+boldy3=HEIGHT-200
+boldx3=200
+boldx4=WIDTH-200
+boldy4=HEIGHT-200
+bolder1=pygame.Rect(boldx1,boldy1,75,75)
+bolder2=pygame.Rect(boldx2,boldy2,75,75)
+bolder3=pygame.Rect(boldx3,boldy3,75,75)
+bolder4=pygame.Rect(boldx4,boldy4,75,75)# the cords for the wall that change depending on the height of the screen 
+newgame1=False
+newgame2=False
 win=pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption('Setting Window')
 square=pygame.Rect(x,y,wbox,hbox)
@@ -64,17 +77,17 @@ hitstun=False
 lastr1= False
 lastl1= False 
 lastr2= False
-lastl2= False
+lastl2= False#used to determine the last dircetion each of them faced 
 FIGx1=50
-FIGy1=HEIGHT-HEIGHT-50
+FIGy1=HEIGHT-50
 FIGx2=WIDTH-50
-FIGy2= HEIGHT-50
+FIGy2= HEIGHT-50#they start at oppisted sides of the screen 
 def redrawGameWindowforp1():
     global walkCount1 
     if walkCount1 + 1 >= 27:
         walkCount = 0
         
-    if left==True and right==False:  
+    if left==True and right==False:  #for every time they take a step the walkcount is moved up by one and their image is changed constanly to make it look like they are moving in a certian direction
         win.blit(walkLeft[walkCount//3], (FIGx1,FIGy1))
         walkCount += 1                          
     elif right==True and left ==False:
@@ -392,7 +405,16 @@ while run:
                     Menu_function(gameMessages,150)
                     counter-=6
                     pygame.time.delay(100)
-                if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7:
+                if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True:
+                    walkCount1= 0
+                    walkCount2= 0
+                    left=False
+                    right=False
+                    hitstun=False 
+                    lastr1= False
+                    lastl1= False 
+                    lastr2= False
+                    lastl2= False
                     if HEIGHT==700:
                         win.blit(sebg,(0,0))
                     if HEIGHT==800:
@@ -401,7 +423,22 @@ while run:
                         win.blit(nibg(0,0))
                     if HEIGHT==1000:
                         win.blit(tebg (0,0))
-                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7:
+                    win.blit(StR,FIGx1,FIGy1)
+                    win.blit(StL,FIGx2, FIGy2)
+                    pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
+                    pygame.draw.rect(win,ORANGE,bolder2)     
+                    pygame.draw.rect(win,ORANGE,bolder3)  
+                    pygame.draw.rect(win,ORANGE,bolder4)        
+                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True:
+                    walkCount1= 0
+                    walkCount2= 0
+                    left=False
+                    right=False
+                    hitstun=False 
+                    lastr1= False
+                    lastl1= False 
+                    lastr2= False
+                    lastl2= False
                     if HEIGHT==700:
                         win.blit(sebg2,(0,0))
                     if HEIGHT==800:
@@ -410,6 +447,13 @@ while run:
                         win.blit(nibg2(0,0))
                     if HEIGHT==1000:
                         win.blit(tebg2 (0,0))
+                    win.blit(StR,FIGx1,FIGy1)
+                    win.blit(StL,FIGx2, FIGy2)  
+                    pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
+                    pygame.draw.rect(win,ORANGE,bolder2)     
+                    pygame.draw.rect(win,ORANGE,bolder3)  
+                    pygame.draw.rect(win,ORANGE,bolder4)
+                                         
                 if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
                     xp=0
                     yp=0 

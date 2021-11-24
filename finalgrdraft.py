@@ -71,8 +71,10 @@ text=TITLE_FONT.render('message',1,BLACK)
 counter=0
 walkCount1= 0
 walkCount2= 0
-left=False
-right=False
+left1=False
+right1=False
+left2=False
+right2=False
 hitstun=False 
 lastr1= False
 lastl1= False 
@@ -86,11 +88,10 @@ def redrawGameWindowforp1():
     global walkCount1 
     if walkCount1 + 1 >= 27:
         walkCount = 0
-        
-    if left==True and right==False:  #for every time they take a step the walkcount is moved up by one and their image is changed constanly to make it look like they are moving in a certian direction
+    if left1==True and right1==False:  #for every time they take a step the walkcount is moved up by one and their image is changed constanly to make it look like they are moving in a certian direction
         win.blit(walkLeft[walkCount//3], (FIGx1,FIGy1))
         walkCount += 1                          
-    elif right==True and left ==False:
+    elif right1==True and left1 ==False:
         win.blit(walkRight[walkCount//3], (FIGx1,FIGy1))
         walkCount += 1
     elif lastr1== True and lastl1 == False:
@@ -104,10 +105,10 @@ def redrawGameWindowforp2():
     if walkCount1 + 1 >= 27:
         walkCount = 0
         
-    if left==True and right==False:  
+    if left2==True and right2==False:  
         win.blit(walkLeft[walkCount//3], (FIGx2,FIGy2))
         walkCount += 1                          
-    elif right==True and left ==False:
+    elif right2==True and left2 ==False:
         win.blit(walkRight[walkCount//3], (FIGx2,FIGy2))
         walkCount += 1
     elif lastr2== True and lastl2 == False:
@@ -408,8 +409,10 @@ while run:
                 if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True:
                     walkCount1= 0
                     walkCount2= 0
-                    left=False
-                    right=False
+                    left1=False
+                    right1=False
+                    left2=False
+                    Right2=False
                     hitstun=False 
                     lastr1= False
                     lastl1= False 
@@ -428,12 +431,54 @@ while run:
                     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                     pygame.draw.rect(win,ORANGE,bolder2)     
                     pygame.draw.rect(win,ORANGE,bolder3)  
-                    pygame.draw.rect(win,ORANGE,bolder4)        
+                    pygame.draw.rect(win,ORANGE,bolder4)
+                    while play:
+                            pygame.time.delay(100) #milliseconds 
+                            for anyThing in pygame.event.get(): #variable for anytrhing that happneds in py to listen to keyboard and mouse
+                                if anyThing.type ==pygame.QUIT: #says if Quit is typed something happends
+                                    run =False
+                            keyPressed= pygame.key.get_pressed()#records keyboard movement
+                            speedx=10
+                            speedy=10
+                            if keyPressed[pygame.K_RIGHT]:  
+                                FIGx1 +=speedx 
+                                right1=True
+                                left1=False
+                                lastr1=True
+                                lastl1=False 
+                            if keyPressed[pygame.K_LEFT]:  
+                                FIGx1 -=speedx 
+                                right1=False
+                                left1=True
+                                lastr1=False
+                                lastl1=True
+                            if keyPressed[pygame.K_UP]:  
+                                FIGy1-=speedx
+                            if keyPressed [pygame.K_DOWN]:
+                                FIGy1 +=speedx
+                            if keyPressed[pygame.K_d]:  
+                                FIGx2 +=speedy 
+                                righ2=True
+                                left2=False
+                                lastr2=True
+                                lastl2=False 
+                            if keyPressed[pygame.K_a]:  
+                                FIGx2-=speedy
+                                right2=False
+                                left2=True
+                                lastr2=False
+                                lastl2=True
+                            if keyPressed[pygame.K_w]:  
+                                FIGy2-=speedy
+                            if keyPressed [pygame.K_s]:
+                                FIGy2 +=speedy
                 if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True:
                     walkCount1= 0
                     walkCount2= 0
-                    left=False
-                    right=False
+                    left1=False
+                    right1=False
+                    left2=False
+                    Right2=False
                     hitstun=False 
                     lastr1= False
                     lastl1= False 
@@ -453,7 +498,46 @@ while run:
                     pygame.draw.rect(win,ORANGE,bolder2)     
                     pygame.draw.rect(win,ORANGE,bolder3)  
                     pygame.draw.rect(win,ORANGE,bolder4)
-                                         
+                    while play:
+                            pygame.time.delay(100) #milliseconds 
+                            for anyThing in pygame.event.get(): #variable for anytrhing that happneds in py to listen to keyboard and mouse
+                                if anyThing.type ==pygame.QUIT: #says if Quit is typed something happends
+                                    run =False
+                            keyPressed= pygame.key.get_pressed()#records keyboard movement
+                            speedx=10
+                            speedy=10 
+                            if keyPressed[pygame.K_RIGHT]:  
+                                FIGx1 +=speedx 
+                                right1=True
+                                left1=False
+                                lastr1=True
+                                lastl1=False 
+                            if keyPressed[pygame.K_LEFT]:  
+                                FIGx1 -=speedx 
+                                right1=False
+                                left1=True
+                                lastr1=False
+                                lastl1=True
+                            if keyPressed[pygame.K_UP]:  
+                                FIGy1-=speedx
+                            if keyPressed [pygame.K_DOWN]:
+                                FIGy1 +=speedx
+                            if keyPressed[pygame.K_d]:  
+                                FIGx2 +=speedy 
+                                righ2=True
+                                left2=False
+                                lastr2=True
+                                lastl2=False 
+                            if keyPressed[pygame.K_a]:  
+                                FIGx2-=speedy
+                                right2=False
+                                left2=True
+                                lastr2=False
+                                lastl2=True
+                            if keyPressed[pygame.K_w]:  
+                                FIGy2-=speedy
+                            if keyPressed [pygame.K_s]:
+                                FIGy2 +=speedy
                 if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
                     xp=0
                     yp=0 

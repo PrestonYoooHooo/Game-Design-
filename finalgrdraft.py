@@ -484,10 +484,22 @@ while run:
                                 FIGy2-=speedy
                             if keyPressed [pygame.K_s]:
                                 FIGy2 +=speedy
-                            if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:
+                            if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                 spped1=False
                                 pygame.time.delay(3000)
                                 spped1=True
+                            if FIGy1==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                spped1=False
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGx2==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
+                                spped1=False
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGy2==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                spped2=False
+                                pygame.time.delay(3000)
+                                spped2=True
                 if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True:
                     walkCount1= 0
                     walkCount2= 0
@@ -563,10 +575,22 @@ while run:
                                     FIGy2-=speedy
                                 if keyPressed [pygame.K_s]:
                                     FIGy2 +=speedy
-                                if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:
+                                if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                     spped1=False
                                     pygame.time.delay(3000)
                                     spped1=True
+                                if FIGy1==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                    spped1=False
+                                    pygame.time.delay(3000)
+                                    spped1=True
+                                if FIGx2==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
+                                    spped1=False
+                                    pygame.time.delay(3000)
+                                    spped1=True
+                                if FIGy2==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                    spped2=False
+                                    pygame.time.delay(3000)
+                                    spped2=True
                 if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
                     xp=0
                     yp=0 

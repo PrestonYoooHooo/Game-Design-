@@ -17,20 +17,20 @@ InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with 
 PlMessages= ['Level 1', 'Level 2', 'Back']
 walkRight = [pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'), pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 9.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
 walkLeft = [pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 5.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 6.jpeg')]
-StL = [pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')]
-StR = [pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
-sebg = [pygame.image.load('images/images copy.jpg')]
-eibg = [pygame.image.load('images/images copy 2.jpg')]
-nibg = [pygame.image.load('images/images copy 3.jpg')]
-tebg = [pygame.image.load('images/images.jpg')]
-sebg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700.jpg')]
-eibg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy.jpg')]
-nibg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 2.jpg')]
-tebg2 = [pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 3.jpg')]
-lamon = [pygame.image.load('images/95-957201_lava-muk-pokemon-lava.jpg')]
-p1 = [pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')]
-p2 = [pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')]
-fl = [pygame.image.load('images/Unknown.png')]#I define/load all of my picture variables 
+StL = pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')
+StR = pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')
+sebg = pygame.image.load('images/images copy.jpg')
+eibg = pygame.image.load('images/images copy 2.jpg')
+nibg = pygame.image.load('images/images copy 3.jpg')
+tebg = pygame.image.load('images/images.jpg')
+sebg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700.jpg')
+eibg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy.jpg')
+nibg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 2.jpg')
+tebg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 3.jpg')
+lamon = pygame.image.load('images/95-957201_lava-muk-pokemon-lava.jpg')
+p1 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
+p2 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
+fl = pygame.image.load('images/Unknown.png')#I define/load all of my picture variables 
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -45,6 +45,8 @@ wbox=25
 hbox=30
 x=70
 y=150
+spped1=True
+spped2=True
 boldx1=200
 boldy1=200
 boldx2=WIDTH-200
@@ -117,6 +119,7 @@ def redrawGameWindowforp2():
     else:
         win.blit(StL,FIGx2,FIGy2)
         walkCount=0
+    
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
     win.fill(WHITE)
@@ -409,6 +412,14 @@ while run:
                 if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True:
                     walkCount1= 0
                     walkCount2= 0
+                    boldx1=200
+                    boldy1=200
+                    boldx2=WIDTH-200
+                    boldy2=200
+                    boldy3=HEIGHT-200
+                    boldx3=200
+                    boldx4=WIDTH-200
+                    boldy4=HEIGHT-200
                     left1=False
                     right1=False
                     left2=False
@@ -440,22 +451,23 @@ while run:
                             keyPressed= pygame.key.get_pressed()#records keyboard movement
                             speedx=10
                             speedy=10
-                            if keyPressed[pygame.K_RIGHT]:  
-                                FIGx1 +=speedx 
-                                right1=True
-                                left1=False
-                                lastr1=True
-                                lastl1=False 
-                            if keyPressed[pygame.K_LEFT]:  
-                                FIGx1 -=speedx 
-                                right1=False
-                                left1=True
-                                lastr1=False
-                                lastl1=True
-                            if keyPressed[pygame.K_UP]:  
-                                FIGy1-=speedx
-                            if keyPressed [pygame.K_DOWN]:
-                                FIGy1 +=speedx
+                            if spped1==True:  
+                                if keyPressed[pygame.K_RIGHT]:  
+                                    FIGx1 +=speedx 
+                                    right1=True
+                                    left1=False
+                                    lastr1=True
+                                    lastl1=False 
+                                if keyPressed[pygame.K_LEFT]:  
+                                    FIGx1 -=speedx 
+                                    right1=False
+                                    left1=True
+                                    lastr1=False
+                                    lastl1=True
+                                if keyPressed[pygame.K_UP]:  
+                                    FIGy1-=speedx
+                                if keyPressed [pygame.K_DOWN]:
+                                    FIGy1 +=speedx
                             if keyPressed[pygame.K_d]:  
                                 FIGx2 +=speedy 
                                 righ2=True
@@ -472,6 +484,10 @@ while run:
                                 FIGy2-=speedy
                             if keyPressed [pygame.K_s]:
                                 FIGy2 +=speedy
+                            if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:
+                                spped1=False
+                                pygame.time.delay(3000)
+                                spped1=True
                 if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True:
                     walkCount1= 0
                     walkCount2= 0
@@ -484,6 +500,14 @@ while run:
                     lastl1= False 
                     lastr2= False
                     lastl2= False
+                    boldx1=200
+                    boldy1=200
+                    boldx2=WIDTH-200
+                    boldy2=200
+                    boldy3=HEIGHT-200
+                    boldx3=200
+                    boldx4=WIDTH-200
+                    boldy4=HEIGHT-200
                     if HEIGHT==700:
                         win.blit(sebg2,(0,0))
                     if HEIGHT==800:
@@ -506,38 +530,43 @@ while run:
                             keyPressed= pygame.key.get_pressed()#records keyboard movement
                             speedx=10
                             speedy=10 
-                            if keyPressed[pygame.K_RIGHT]:  
-                                FIGx1 +=speedx 
-                                right1=True
-                                left1=False
-                                lastr1=True
-                                lastl1=False 
-                            if keyPressed[pygame.K_LEFT]:  
-                                FIGx1 -=speedx 
-                                right1=False
-                                left1=True
-                                lastr1=False
-                                lastl1=True
-                            if keyPressed[pygame.K_UP]:  
-                                FIGy1-=speedx
-                            if keyPressed [pygame.K_DOWN]:
-                                FIGy1 +=speedx
-                            if keyPressed[pygame.K_d]:  
-                                FIGx2 +=speedy 
-                                righ2=True
-                                left2=False
-                                lastr2=True
-                                lastl2=False 
-                            if keyPressed[pygame.K_a]:  
-                                FIGx2-=speedy
-                                right2=False
-                                left2=True
-                                lastr2=False
-                                lastl2=True
-                            if keyPressed[pygame.K_w]:  
-                                FIGy2-=speedy
-                            if keyPressed [pygame.K_s]:
-                                FIGy2 +=speedy
+                            if spped1==True:
+                                if keyPressed[pygame.K_RIGHT]:  
+                                    FIGx1 +=speedx 
+                                    right1=True
+                                    left1=False
+                                    lastr1=True
+                                    lastl1=False 
+                                if keyPressed[pygame.K_LEFT]:  
+                                    FIGx1 -=speedx 
+                                    right1=False
+                                    left1=True
+                                    lastr1=False
+                                    lastl1=True
+                                if keyPressed[pygame.K_UP]:  
+                                    FIGy1-=speedx
+                                if keyPressed [pygame.K_DOWN]:
+                                    FIGy1 +=speedx
+                                if keyPressed[pygame.K_d]:  
+                                    FIGx2 +=speedy 
+                                    righ2=True
+                                    left2=False
+                                    lastr2=True
+                                    lastl2=False 
+                                if keyPressed[pygame.K_a]:  
+                                    FIGx2-=speedy
+                                    right2=False
+                                    left2=True
+                                    lastr2=False
+                                    lastl2=True
+                                if keyPressed[pygame.K_w]:  
+                                    FIGy2-=speedy
+                                if keyPressed [pygame.K_s]:
+                                    FIGy2 +=speedy
+                                if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:
+                                    spped1=False
+                                    pygame.time.delay(3000)
+                                    spped1=True
                 if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
                     xp=0
                     yp=0 

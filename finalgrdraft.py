@@ -429,6 +429,10 @@ while run:
                     lastl1= False 
                     lastr2= False
                     lastl2= False
+                    P1x=FIGx1
+                    P2x=FIGx2
+                    P1y=FIGy1-45
+                    P2y=FIGy2-45
                     if HEIGHT==700:
                         win.blit(sebg,(0,0))
                     if HEIGHT==800:
@@ -439,6 +443,8 @@ while run:
                         win.blit(tebg (0,0))
                     win.blit(StR,FIGx1,FIGy1)
                     win.blit(StL,FIGx2, FIGy2)
+                    win.blit(p1,P1x,P1y)
+                    win.blit(p2,P2x, P2y)
                     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                     pygame.draw.rect(win,ORANGE,bolder2)     
                     pygame.draw.rect(win,ORANGE,bolder3)  
@@ -468,22 +474,23 @@ while run:
                                     FIGy1-=speedx
                                 if keyPressed [pygame.K_DOWN]:
                                     FIGy1 +=speedx
-                            if keyPressed[pygame.K_d]:  
-                                FIGx2 +=speedy 
-                                righ2=True
-                                left2=False
-                                lastr2=True
-                                lastl2=False 
-                            if keyPressed[pygame.K_a]:  
-                                FIGx2-=speedy
-                                right2=False
-                                left2=True
-                                lastr2=False
-                                lastl2=True
-                            if keyPressed[pygame.K_w]:  
-                                FIGy2-=speedy
-                            if keyPressed [pygame.K_s]:
-                                FIGy2 +=speedy
+                            if spped2==True:
+                                if keyPressed[pygame.K_d]:  
+                                    FIGx2 +=speedy 
+                                    righ2=True
+                                    left2=False
+                                    lastr2=True
+                                    lastl2=False 
+                                if keyPressed[pygame.K_a]:  
+                                    FIGx2-=speedy
+                                    right2=False
+                                    left2=True
+                                    lastr2=False
+                                    lastl2=True
+                                if keyPressed[pygame.K_w]:  
+                                    FIGy2-=speedy
+                                if keyPressed [pygame.K_s]:
+                                    FIGy2 +=speedy
                             if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                 spped1=False
                                 pygame.time.delay(3000)
@@ -493,9 +500,9 @@ while run:
                                 pygame.time.delay(3000)
                                 spped1=True
                             if FIGx2==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
-                                spped1=False
+                                spped2=False
                                 pygame.time.delay(3000)
-                                spped1=True
+                                spped2=True
                             if FIGy2==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
                                 spped2=False
                                 pygame.time.delay(3000)
@@ -559,22 +566,23 @@ while run:
                                     FIGy1-=speedx
                                 if keyPressed [pygame.K_DOWN]:
                                     FIGy1 +=speedx
-                                if keyPressed[pygame.K_d]:  
-                                    FIGx2 +=speedy 
-                                    righ2=True
-                                    left2=False
-                                    lastr2=True
-                                    lastl2=False 
-                                if keyPressed[pygame.K_a]:  
-                                    FIGx2-=speedy
-                                    right2=False
-                                    left2=True
-                                    lastr2=False
-                                    lastl2=True
-                                if keyPressed[pygame.K_w]:  
-                                    FIGy2-=speedy
-                                if keyPressed [pygame.K_s]:
-                                    FIGy2 +=speedy
+                                if spped2==True:
+                                    if keyPressed[pygame.K_d]:  
+                                        FIGx2 +=speedy 
+                                        righ2=True
+                                        left2=False
+                                        lastr2=True
+                                        lastl2=False 
+                                    if keyPressed[pygame.K_a]:  
+                                        FIGx2-=speedy
+                                        right2=False
+                                        left2=True
+                                        lastr2=False
+                                        lastl2=True
+                                    if keyPressed[pygame.K_w]:  
+                                        FIGy2-=speedy
+                                    if keyPressed [pygame.K_s]:
+                                        FIGy2 +=speedy
                                 if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                     spped1=False
                                     pygame.time.delay(3000)

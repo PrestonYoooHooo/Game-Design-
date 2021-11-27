@@ -31,6 +31,7 @@ lamon = pygame.image.load('images/95-957201_lava-muk-pokemon-lava.jpg')
 p1 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
 p2 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
 fl = pygame.image.load('images/Unknown.png')#I define/load all of my picture variables 
+proj11 = pygame.image.load()
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -527,6 +528,10 @@ while run:
                     boldx3=200
                     boldx4=WIDTH-200
                     boldy4=HEIGHT-200
+                    P1x=FIGx1
+                    P2x=FIGx2
+                    P1y=FIGy1-45
+                    P2y=FIGy2-45
                     if HEIGHT==700:
                         win.blit(sebg2,(0,0))
                     if HEIGHT==800:
@@ -536,7 +541,9 @@ while run:
                     if HEIGHT==1000:
                         win.blit(tebg2 (0,0))
                     win.blit(StR,FIGx1,FIGy1)
-                    win.blit(StL,FIGx2, FIGy2)  
+                    win.blit(StL,FIGx2, FIGy2) 
+                    win.blit(p1,P1x,P1y)
+                    win.blit(p2,P2x, P2y) 
                     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                     pygame.draw.rect(win,ORANGE,bolder2)     
                     pygame.draw.rect(win,ORANGE,bolder3)  

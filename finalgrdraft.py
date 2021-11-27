@@ -31,7 +31,14 @@ lamon = pygame.image.load('images/95-957201_lava-muk-pokemon-lava.jpg')
 p1 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
 p2 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
 fl = pygame.image.load('images/Unknown.png')#I define/load all of my picture variables 
-proj11 = pygame.image.load()
+proj11 = pygame.image.load('images/untitled folder/explosion01_128 copy.png')
+proj12 = pygame.image.load('images/untitled folder/explosion01_128 copy 2.png')
+proj13 = pygame.image.load('images/untitled folder/explosion01_128 copy 3.png')
+proj14 = pygame.image.load('images/untitled folder/explosion01_128 copy 4.png')
+proj21 = pygame.image.load("images/untitled folder/explosion01_128 copy 5.png")
+proj22 = pygame.image.load('images/untitled folder/explosion01_128 copy 6.png')
+proj23 = pygame.image.load('images/untitled folder/explosion01_128 copy 7.png')
+proj24 = pygame.image.load('images/untitled folder/explosion01_128 copy 8.png')
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -62,6 +69,7 @@ bolder3=pygame.Rect(boldx3,boldy3,75,75)
 bolder4=pygame.Rect(boldx4,boldy4,75,75)# the cords for the wall that change depending on the height of the screen 
 newgame1=False
 newgame2=False
+porjsped= 15
 win=pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption('Setting Window')
 square=pygame.Rect(x,y,wbox,hbox)

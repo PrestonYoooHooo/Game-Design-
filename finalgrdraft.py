@@ -456,16 +456,38 @@ while run:
                     lastl1= False 
                     lastr2= False
                     lastl2= True
+                    lastw1=False
+                    lastw2=False
+                    lastd1=False
+                    lastd2=False
                     P1x=FIGx1
                     P2x=FIGx2
                     P1y=FIGy1-45
                     P2y=FIGy2-45
-                    pjxr=FIGx1-40
-                    pjy=FIGy1
-                    pjxl=FIGx1+40
-                    pjxr2=FIGx2-40
-                    pjy2=FIGy2
-                    pjxl2=FIGx2+40
+                    pjxr11=FIGx1-40
+                    pjy11=FIGy1
+                    pjxl11=FIGx1+40
+                    pjxr21=FIGx2-40
+                    pjy21=FIGy2
+                    pjxl21=FIGx2+40
+                    pjxr12=FIGx1-40
+                    pjy12=FIGy1
+                    pjxl12=FIGx1+40
+                    pjxr22=FIGx2-40
+                    pjy22=FIGy2
+                    pjxl22=FIGx2+40
+                    pjxr13=FIGx1-40
+                    pjy13=FIGy1
+                    pjxl13=FIGx1+40
+                    pjxr23=FIGx2-40
+                    pjy23=FIGy2
+                    pjxl23=FIGx2+40
+                    pjxr14=FIGx1-40
+                    pjy14=FIGy1
+                    pjxl14=FIGx1+40
+                    pjxr24=FIGx2-40
+                    pjy24=FIGy2
+                    pjxl24=FIGx2+40
                     if HEIGHT==700:
                         win.blit(sebg,(0,0))
                     if HEIGHT==800:
@@ -490,51 +512,72 @@ while run:
                             keyPressed= pygame.key.get_pressed()#records keyboard movement
                             speedx=10
                             speedy=10
+                            P1y=FIGy1-45
+                            P2y=FIGy2-45
                             if spped1==True:  
                                 if keyPressed[pygame.K_RIGHT]:  
                                     FIGx1 +=speedx 
                                     right1=True
                                     left1=False
                                     lastr1=True
-                                    lastl1=False 
+                                    lastl1=False
+                                    lastd1=False
+                                    lastw1=False
                                 if keyPressed[pygame.K_LEFT]:  
                                     FIGx1 -=speedx 
                                     right1=False
                                     left1=True
                                     lastr1=False
                                     lastl1=True
+                                    lastd1=False
+                                    lastw1=False
                                 if keyPressed[pygame.K_UP]:  
                                     FIGy1-=speedx
+                                    lastr1=False
+                                    lastl1=False
+                                    lastd1=False
+                                    lastw1=True
                                 if keyPressed [pygame.K_DOWN]:
                                     FIGy1 +=speedx
+                                    lastr1=False
+                                    lastl1=False
+                                    lastw1=False
+                                    lastd1=True
                                 if keyPressed[pygame.K_f]:
                                     if lastr1==True and p1pjcon>0:
                                         if p1pjcon==4:
-                                            win.blit(proj11,pjxr,FIGy1)
+                                            win.blit(proj11,pjxr11,FIGy1)
                                             p1pjcon-=1
-                                            pj1=True
+                                            pj11=True
                                         if p1pjcon==3:
-                                            win.blit(proj12,pjxr,FIGy1)
-                                            p1pjcon-=1     
+                                            win.blit(proj12,pjxr12,FIGy1)
+                                            p1pjcon-=1  
+                                            pj12=True  
                                         if p1pjcon==2:
-                                            win.blit(proj13,pjxr,FIGy1)
+                                            win.blit(proj13,pjxr13,FIGy1)
                                             p1pjcon-=1 
+                                            pj13=True
                                         if p1pjcon==1:
-                                            win.blit(proj14,pjxr,FIGy1)
+                                            win.blit(proj14,pjxr14,FIGy1)
                                             p1pjcon-=1 
+                                            pj14=True
                                     if lastl1==True and p1pjcon>0:
                                         if p1pjcon==4:
-                                            win.blit(proj11,pjxl,FIGy1)
+                                            win.blit(proj11,pjxl11,FIGy1)
                                             p1pjcon-=1
+                                            pj11=True
                                         if p1pjcon==3:
-                                            win.blit(proj12,pjxl,FIGy1)
-                                            p1pjcon-=1     
-                                        if p1pjcon==2:
-                                            win.blit(proj13,pjxl,FIGy1)
+                                            win.blit(proj12,pjxl12,FIGy1)
                                             p1pjcon-=1 
+                                            pj12=True    
+                                        if p1pjcon==2:
+                                            win.blit(proj13,pjxl13,FIGy1)
+                                            p1pjcon-=1 
+                                            pj13=True
                                         if p1pjcon==1:
-                                            win.blit(proj14,pjxl,FIGy1)
-                                            p1pjcon-=1  
+                                            win.blit(proj14,pjxl14,FIGy1)
+                                            p1pjcon-=1 
+                                            pj14=True 
                             if spped2==True:
                                 if keyPressed[pygame.K_d]:  
                                     FIGx2 +=speedy 
@@ -542,43 +585,79 @@ while run:
                                     left2=False
                                     lastr2=True
                                     lastl2=False 
+                                    lastd2=False
+                                    lastw2=False
                                 if keyPressed[pygame.K_a]:  
                                     FIGx2-=speedy
                                     right2=False
                                     left2=True
                                     lastr2=False
                                     lastl2=True
+                                    lastd2=False
+                                    lastw2=False
                                 if keyPressed[pygame.K_w]:  
                                     FIGy2-=speedy
+                                    lastr2=False
+                                    lastl2=False
+                                    lastd2=False
+                                    lastw2=True
                                 if keyPressed[pygame.K_s]:
                                     FIGy2 +=speedy
+                                    lastr2=False
+                                    lastl2=False
+                                    lastd2=True
+                                    lastw2=False
                                 if keyPressed[pygame.K_SLASH]:
                                     if lastr2==True and p2pjcon>0:
                                         if p2pjcon==4:
-                                            win.blit(proj21,pjxr2,FIGy2)
+                                            win.blit(proj21,pjxr21,pjy11)
                                             p2pjcon-=1
+                                            pj21=True
                                         if p2pjcon==3:
-                                            win.blit(proj22,pjxr2,FIGy2)
-                                            p2pjcon-=1     
+                                            win.blit(proj22,pjxr22,pjy12)
+                                            p2pjcon-=1 
+                                            pj22=True    
                                         if p2pjcon==2:
-                                            win.blit(proj23,pjxr2,FIGy2)
+                                            win.blit(proj23,pjxr23,pjy13)
                                             p2pjcon-=1 
+                                            pj23=True
                                         if p2pjcon==1:
-                                            win.blit(proj24,pjxr2,FIGy2)
-                                            p2pjcon-=1 
+                                            win.blit(proj24,pjxr24,pjy14)
+                                            p2pjcon-=1
+                                            pj24=True 
                                     if lastl2==True and p2pjcon>0:
                                         if p2pjcon==4:
-                                            win.blit(proj21,pjxr2,FIGy2)
+                                            win.blit(proj21,pjxr21,pjy21)
                                             p2pjcon-=1
+                                            pj21=True
                                         if p2pjcon==3:
-                                            win.blit(proj22,pjxr2,FIGy2)
-                                            p2pjcon-=1     
+                                            win.blit(proj22,pjxr22,pjy22)
+                                            p2pjcon-=1  
+                                            pj22=True   
                                         if p2pjcon==2:
-                                            win.blit(proj23,pjxr2,FIGy2)
+                                            win.blit(proj23,pjxr23,pjy23)
                                             p2pjcon-=1 
+                                            pj23=True
                                         if p2pjcon==1:
-                                            win.blit(proj24,pjxr2,FIGy2)
-                                            p2pjcon-=1                            
+                                            win.blit(proj24,pjxr24,pjy24)
+                                            p2pjcon-=1 
+                                            pj24=True
+                                    if pj11==True and projcount11>0 and lastl1==True:
+                                        pjxl11+=20
+                                        projcount11-=1
+                                        if pjxl11 == boldx1 or boldx2 or boldx3 or boldx4:
+                                            pj11==False
+                                            projcount11=30
+                                            pjxl11=FIGx1-40
+                                            pjy11=FIGy1
+                                        if pjy11 == boldy1 or boldy2 or boldy3 or boldy4:
+                                            pj11==False
+                                            projcount11=30
+                                            pjxl11=FIGx1-40  
+                                            pjy11=FIGy1  
+                                    else:
+                                        pj11=False
+                                        projcount11=30                                 
                             if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                 spped1=False
                                 pygame.time.delay(3000)
@@ -607,12 +686,34 @@ while run:
                     lastl1= False 
                     lastr2= False
                     lastl2= True
-                    pjxr=FIGx1-40
-                    pjy=FIGy1
-                    pjxl=FIGx1+40
-                    pjxr2=FIGx2-40
-                    pjy2=FIGy2
-                    pjxl2=FIGx2+40
+                    lastw1=False
+                    lastw2=False
+                    lastd1=False
+                    lastd2=False
+                    pjxr11=FIGx1-40
+                    pjy11=FIGy1
+                    pjxl11=FIGx1+40
+                    pjxr21=FIGx2-40
+                    pjy21=FIGy2
+                    pjxl21=FIGx2+40
+                    pjxr12=FIGx1-40
+                    pjy12=FIGy1
+                    pjxl12=FIGx1+40
+                    pjxr22=FIGx2-40
+                    pjy22=FIGy2
+                    pjxl22=FIGx2+40
+                    pjxr13=FIGx1-40
+                    pjy13=FIGy1
+                    pjxl13=FIGx1+40
+                    pjxr23=FIGx2-40
+                    pjy23=FIGy2
+                    pjxl23=FIGx2+40
+                    pjxr14=FIGx1-40
+                    pjy14=FIGy1
+                    pjxl14=FIGx1+40
+                    pjxr24=FIGx2-40
+                    pjy24=FIGy2
+                    pjxl24=FIGx2+40
                     boldx1=200
                     boldy1=200
                     boldx2=WIDTH-200
@@ -656,88 +757,127 @@ while run:
                                     left1=False
                                     lastr1=True
                                     lastl1=False 
+                                    lastd1=False
+                                    lastw1=False
                                 if keyPressed[pygame.K_LEFT]:  
                                     FIGx1 -=speedx 
                                     right1=False
                                     left1=True
                                     lastr1=False
                                     lastl1=True
+                                    lastd1=False
+                                    lastw1=False
                                 if keyPressed[pygame.K_UP]:  
                                     FIGy1-=speedx
+                                    lastr1=False
+                                    lastl1=False
+                                    lastd1=False
+                                    lastw1=True
                                 if keyPressed [pygame.K_DOWN]:
                                     FIGy1 +=speedx
+                                    lastr1=False
+                                    lastl1=False
+                                    lastd1=True
+                                    lastw1=False
                                 if keyPressed[pygame.K_f]:
                                     if lastr1==True and p1pjcon>0:
                                         if p1pjcon==4:
-                                            win.blit(proj11,pjxr,FIGy1)
+                                            win.blit(proj11,pjxr11,FIGy1)
                                             p1pjcon-=1
+                                            pj11=True
                                         if p1pjcon==3:
-                                            win.blit(proj12,pjxr,FIGy1)
-                                            p1pjcon-=1     
+                                            win.blit(proj12,pjxr12,FIGy1)
+                                            p1pjcon-=1  
+                                            pj12=True   
                                         if p1pjcon==2:
-                                            win.blit(proj13,pjxr,FIGy1)
-                                            p1pjcon-=1 
+                                            win.blit(proj13,pjxr13,FIGy1)
+                                            p1pjcon-=1
+                                            pj13=True 
                                         if p1pjcon==1:
-                                            win.blit(proj14,pjxr,FIGy1)
-                                            p1pjcon-=1 
+                                            win.blit(proj14,pjxr14,FIGy1)
+                                            p1pjcon-=1
+                                            pj14=True 
                                     if lastl1==True and p1pjcon>0:
                                         if p1pjcon==4:
-                                            win.blit(proj11,pjxl,FIGy1)
+                                            win.blit(proj11,pjxl11,FIGy1)
                                             p1pjcon-=1
+                                            pj11=True
                                         if p1pjcon==3:
-                                            win.blit(proj12,pjxl,FIGy1)
-                                            p1pjcon-=1     
-                                        if p1pjcon==2:
-                                            win.blit(proj13,pjxl,FIGy1)
+                                            win.blit(proj12,pjxl12,FIGy1)
                                             p1pjcon-=1 
+                                            pj12=True    
+                                        if p1pjcon==2:
+                                            win.blit(proj13,pjxl13,FIGy1)
+                                            p1pjcon-=1 
+                                            pj13=True
                                         if p1pjcon==1:
-                                            win.blit(proj14,pjxl,FIGy1)
-                                            p1pjcon-=1  
-                                        
+                                            win.blit(proj14,pjxl14,FIGy1)
+                                            p1pjcon-=1 
+                                            pj14=True          
                                 if spped2==True:
                                     if keyPressed[pygame.K_d]:  
                                         FIGx2 +=speedy 
                                         righ2=True
                                         left2=False
                                         lastr2=True
-                                        lastl2=False 
+                                        lastl2=False
+                                        lastd2=False
+                                        lastw2=False 
                                     if keyPressed[pygame.K_a]:  
                                         FIGx2-=speedy
                                         right2=False
                                         left2=True
                                         lastr2=False
                                         lastl2=True
+                                        lastd2=False
+                                        lastw2=False
                                     if keyPressed[pygame.K_w]:  
                                         FIGy2-=speedy
+                                        lastr2=False
+                                        lastl2=False
+                                        lastd2=False
+                                        lastw2=True
                                     if keyPressed [pygame.K_s]:
                                         FIGy2 +=speedy
+                                        lastr2=False
+                                        lastl2=False
+                                        lastd2=True
+                                        lastw2=False
                                 if keyPressed[pygame.K_SLASH]:
                                     if lastr2==True and p2pjcon>0:
                                         if p2pjcon==4:
-                                            win.blit(proj21,pjxr2,FIGy2)
+                                            win.blit(proj21,pjxr21,FIGy2)
                                             p2pjcon-=1
+                                            pj21=True
                                         if p2pjcon==3:
-                                            win.blit(proj22,pjxr2,FIGy2)
-                                            p2pjcon-=1     
+                                            win.blit(proj22,pjxr22,FIGy2)
+                                            p2pjcon-=1 
+                                            pj22=True    
                                         if p2pjcon==2:
-                                            win.blit(proj23,pjxr2,FIGy2)
+                                            win.blit(proj23,pjxr23,FIGy2)
                                             p2pjcon-=1 
+                                            pj23=True
                                         if p2pjcon==1:
-                                            win.blit(proj24,pjxr2,FIGy2)
+                                            win.blit(proj24,pjxr24,FIGy2)
                                             p2pjcon-=1 
+                                            pj24=True
                                     if lastl2==True and p2pjcon>0:
                                         if p2pjcon==4:
-                                            win.blit(proj21,pjxr2,FIGy2)
+                                            win.blit(proj21,pjxr21,FIGy2)
                                             p2pjcon-=1
+                                            pj21=True
                                         if p2pjcon==3:
-                                            win.blit(proj22,pjxr2,FIGy2)
-                                            p2pjcon-=1     
-                                        if p2pjcon==2:
-                                            win.blit(proj23,pjxr2,FIGy2)
+                                            win.blit(proj22,pjxr22,FIGy2)
                                             p2pjcon-=1 
+                                            pj22=True    
+                                        if p2pjcon==2:
+                                            win.blit(proj23,pjxr23,FIGy2)
+                                            p2pjcon-=1 
+                                            pj23=True
                                         if p2pjcon==1:
-                                            win.blit(proj24,pjxr2,FIGy2)
-                                            p2pjcon-=1                         
+                                            win.blit(proj24,pjxr24,FIGy2)
+                                            p2pjcon-=1 
+                                            pj24=True                        
                                 if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                     spped1=False
                                     pygame.time.delay(3000)

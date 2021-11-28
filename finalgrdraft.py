@@ -41,14 +41,14 @@ proj23 = pygame.image.load('images/untitled folder/explosion01_128 copy 7.png')
 proj24 = pygame.image.load('images/untitled folder/explosion01_128 copy 8.png')
 p1pjcon=4
 p2pjcon=4
-    #projcount11=30
-    #projcount12=30
-    #projcount13=30
-    #projcount14=30
-    #projcount21=30
-    #projcount22=30
-    #projcount23=30
-    #projcount24=30
+projcount11=30
+projcount12=30
+projcount13=30
+projcount14=30
+projcount21=30
+projcount22=30
+projcount23=30
+projcount24=30
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -89,6 +89,14 @@ SubTitle=pygame.font.SysFont('comicsans', 40, italic=True)
 MENU_FONT=pygame.font.SysFont('comicsans',40)
 INSTUR_FONT=pygame.font.SysFont('comicsans',30)
 text=TITLE_FONT.render('message',1,BLACK)
+pj11=False
+pj12=False
+pj13=False
+pj14=False
+pj21=False
+pj22=False
+pj23=False
+pj24=False
 counter=0
 walkCount1= 0
 walkCount2= 0
@@ -499,28 +507,12 @@ while run:
                                     FIGy1-=speedx
                                 if keyPressed [pygame.K_DOWN]:
                                     FIGy1 +=speedx
-                            if spped2==True:
-                                if keyPressed[pygame.K_d]:  
-                                    FIGx2 +=speedy 
-                                    righ2=True
-                                    left2=False
-                                    lastr2=True
-                                    lastl2=False 
-                                if keyPressed[pygame.K_a]:  
-                                    FIGx2-=speedy
-                                    right2=False
-                                    left2=True
-                                    lastr2=False
-                                    lastl2=True
-                                if keyPressed[pygame.K_w]:  
-                                    FIGy2-=speedy
-                                if keyPressed[pygame.K_s]:
-                                    FIGy2 +=speedy
                                 if keyPressed[pygame.K_f]:
                                     if lastr1==True and p1pjcon>0:
                                         if p1pjcon==4:
                                             win.blit(proj11,pjxr,FIGy1)
                                             p1pjcon-=1
+                                            pj1=True
                                         if p1pjcon==3:
                                             win.blit(proj12,pjxr,FIGy1)
                                             p1pjcon-=1     
@@ -543,6 +535,23 @@ while run:
                                         if p1pjcon==1:
                                             win.blit(proj14,pjxl,FIGy1)
                                             p1pjcon-=1  
+                            if spped2==True:
+                                if keyPressed[pygame.K_d]:  
+                                    FIGx2 +=speedy 
+                                    righ2=True
+                                    left2=False
+                                    lastr2=True
+                                    lastl2=False 
+                                if keyPressed[pygame.K_a]:  
+                                    FIGx2-=speedy
+                                    right2=False
+                                    left2=True
+                                    lastr2=False
+                                    lastl2=True
+                                if keyPressed[pygame.K_w]:  
+                                    FIGy2-=speedy
+                                if keyPressed[pygame.K_s]:
+                                    FIGy2 +=speedy
                                 if keyPressed[pygame.K_SLASH]:
                                     if lastr2==True and p2pjcon>0:
                                         if p2pjcon==4:
@@ -598,6 +607,12 @@ while run:
                     lastl1= False 
                     lastr2= False
                     lastl2= True
+                    pjxr=FIGx1-40
+                    pjy=FIGy1
+                    pjxl=FIGx1+40
+                    pjxr2=FIGx2-40
+                    pjy2=FIGy2
+                    pjxl2=FIGx2+40
                     boldx1=200
                     boldy1=200
                     boldx2=WIDTH-200
@@ -651,6 +666,34 @@ while run:
                                     FIGy1-=speedx
                                 if keyPressed [pygame.K_DOWN]:
                                     FIGy1 +=speedx
+                                if keyPressed[pygame.K_f]:
+                                    if lastr1==True and p1pjcon>0:
+                                        if p1pjcon==4:
+                                            win.blit(proj11,pjxr,FIGy1)
+                                            p1pjcon-=1
+                                        if p1pjcon==3:
+                                            win.blit(proj12,pjxr,FIGy1)
+                                            p1pjcon-=1     
+                                        if p1pjcon==2:
+                                            win.blit(proj13,pjxr,FIGy1)
+                                            p1pjcon-=1 
+                                        if p1pjcon==1:
+                                            win.blit(proj14,pjxr,FIGy1)
+                                            p1pjcon-=1 
+                                    if lastl1==True and p1pjcon>0:
+                                        if p1pjcon==4:
+                                            win.blit(proj11,pjxl,FIGy1)
+                                            p1pjcon-=1
+                                        if p1pjcon==3:
+                                            win.blit(proj12,pjxl,FIGy1)
+                                            p1pjcon-=1     
+                                        if p1pjcon==2:
+                                            win.blit(proj13,pjxl,FIGy1)
+                                            p1pjcon-=1 
+                                        if p1pjcon==1:
+                                            win.blit(proj14,pjxl,FIGy1)
+                                            p1pjcon-=1  
+                                        
                                 if spped2==True:
                                     if keyPressed[pygame.K_d]:  
                                         FIGx2 +=speedy 
@@ -668,6 +711,33 @@ while run:
                                         FIGy2-=speedy
                                     if keyPressed [pygame.K_s]:
                                         FIGy2 +=speedy
+                                if keyPressed[pygame.K_SLASH]:
+                                    if lastr2==True and p2pjcon>0:
+                                        if p2pjcon==4:
+                                            win.blit(proj21,pjxr2,FIGy2)
+                                            p2pjcon-=1
+                                        if p2pjcon==3:
+                                            win.blit(proj22,pjxr2,FIGy2)
+                                            p2pjcon-=1     
+                                        if p2pjcon==2:
+                                            win.blit(proj23,pjxr2,FIGy2)
+                                            p2pjcon-=1 
+                                        if p2pjcon==1:
+                                            win.blit(proj24,pjxr2,FIGy2)
+                                            p2pjcon-=1 
+                                    if lastl2==True and p2pjcon>0:
+                                        if p2pjcon==4:
+                                            win.blit(proj21,pjxr2,FIGy2)
+                                            p2pjcon-=1
+                                        if p2pjcon==3:
+                                            win.blit(proj22,pjxr2,FIGy2)
+                                            p2pjcon-=1     
+                                        if p2pjcon==2:
+                                            win.blit(proj23,pjxr2,FIGy2)
+                                            p2pjcon-=1 
+                                        if p2pjcon==1:
+                                            win.blit(proj24,pjxr2,FIGy2)
+                                            p2pjcon-=1                         
                                 if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                     spped1=False
                                     pygame.time.delay(3000)

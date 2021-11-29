@@ -848,7 +848,7 @@ while run:
                                             projcount23=30
                                             pjxl23=FIGx2-40  
                                             pjy23=FIGy2  
-                                    else:
+                                    elif pj23==False or projcount23<1:
                                         pj23=False
                                         projcount23=30
                                         pjxl23=FIGx2-40  
@@ -876,7 +876,7 @@ while run:
                                             projcount24=30
                                             pjxl24=FIGx2-40  
                                             pjy24=FIGy2  
-                                    else:
+                                    elif pj24==False or projcount24<1:
                                         pj24=False
                                         projcount24=30
                                         pjxl24=FIGx2-40  

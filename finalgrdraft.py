@@ -129,11 +129,26 @@ def redrawGameWindowforp1():
     else:
         win.blit(StL,FIGx1,FIGy1)
         walkCount=0
+    if pj11==True:
+        win.blit(proj11,pjxl11,pjy11)
+    if pj12==True:
+        win.blit(proj12,pjxl12,pjy12)
+    if pj13==True:
+        win.blit(proj13,pjxl13,pjy13)
+    if pj14==True:
+        win.blit(proj14,pjxl14,pjy14)
+    if pj21==True:
+        win.blit(proj21,pjxl21,pjy21)
+    if pj22==True:
+        win.blit(proj22,pjxl22,pjy22)
+    if pj23==True:
+        win.blit(proj23,pjxl23,pjy23)
+    if pj24==True:
+        win.blit(proj24,pjxl24,pjy24)
 def redrawGameWindowforp2():
     global walkCount1 
     if walkCount1 + 1 >= 27:
-        walkCount = 0
-        
+        walkCount = 0 
     if left2==True and right2==False:  
         win.blit(walkLeft[walkCount//3], (FIGx2,FIGy2))
         walkCount += 1                          
@@ -645,19 +660,227 @@ while run:
                                     if pj11==True and projcount11>0 and lastl1==True:
                                         pjxl11+=20
                                         projcount11-=1
-                                        if pjxl11 == boldx1 or boldx2 or boldx3 or boldx4:
+                                        if pjxl11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
                                             pj11==False
                                             projcount11=30
                                             pjxl11=FIGx1-40
                                             pjy11=FIGy1
-                                        if pjy11 == boldy1 or boldy2 or boldy3 or boldy4:
+                                        if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj11==False
+                                            projcount11=30
+                                            pjxl11=FIGx1-40  
+                                            pjy11=FIGy1  
+                                        if pjxl11 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj11==False
+                                            projcount11=30
+                                            pjxl11=FIGx1-40
+                                            pjy11=FIGy1
+                                        if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
                                             pj11==False
                                             projcount11=30
                                             pjxl11=FIGx1-40  
                                             pjy11=FIGy1  
                                     else:
                                         pj11=False
-                                        projcount11=30                                 
+                                        projcount11=30 
+                                        pjxl11=FIGx1-40  
+                                        pjy11=FIGy1  
+                                    if pj12==True and projcount12>0 and lastl1==True:
+                                        pjxl12+=20
+                                        projcount12-=1
+                                        if pjxl12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                            pj12==False
+                                            projcount12=30
+                                            pjxl12=FIGx1-40
+                                            pjy12=FIGy1
+                                        if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj12==False
+                                            projcount12=30
+                                            pjxl12=FIGx1-40  
+                                            pjy12=FIGy1  
+                                        if pjxl12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj12==False
+                                            projcount12=30
+                                            pjxl12=FIGx1-40
+                                            pjy12=FIGy1
+                                        if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
+                                            pj12==False
+                                            projcount12=30
+                                            pjxl12=FIGx1-40  
+                                            pjy12=FIGy1  
+                                    else:
+                                        pj12=False
+                                        projcount12=30  
+                                        pjxl12=FIGx1-40  
+                                        pjy12=FIGy1 
+                                    if pj13==True and projcount13>0 and lastl1==True:
+                                        pjxl13+=20
+                                        projcount13-=1
+                                        if pjxl13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                            pj13==False
+                                            projcount13=30
+                                            pjxl13=FIGx1-40
+                                            pjy13=FIGy1
+                                        if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj13==False
+                                            projcount13=30
+                                            pjxl13=FIGx1-40  
+                                            pjy13=FIGy1  
+                                        if pjxl13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj13==False
+                                            projcount13=30
+                                            pjxl13=FIGx1-40
+                                            pjy13=FIGy1
+                                        if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
+                                            pj13==False
+                                            projcount13=30
+                                            pjxl13=FIGx1-40  
+                                            pjy13=FIGy1 
+                                    else:
+                                        pj13=False
+                                        projcount13=30  
+                                        pjxl13=FIGx1-40  
+                                        pjy13=FIGy1 
+                                    if pj14==True and projcount13>0 and lastl1==True:
+                                        pjxl14+=20
+                                        projcount14-=1
+                                        if pjxl14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                            pj14==False
+                                            projcount14=30
+                                            pjxl14=FIGx1-40
+                                            pjy14=FIGy1
+                                        if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj14==False
+                                            projcount14=30
+                                            pjxl14=FIGx1-40  
+                                            pjy14=FIGy1  
+                                        if pjxl14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj14==False
+                                            projcount14=30
+                                            pjxl14=FIGx1-40
+                                            pjy14=FIGy1
+                                        if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
+                                            pj14==False
+                                            projcount14=30
+                                            pjxl14=FIGx1-40  
+                                            pjy14=FIGy1  
+                                    else:
+                                        pj14=False
+                                        projcount14=30 
+                                        pjxl14=FIGx1-40  
+                                        pjy14=FIGy1  
+                                    if pj21==True and projcount21>0 and lastl2==True:
+                                        pjxl21+=20
+                                        projcount21-=1
+                                        if pjxl21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                            pj21==False
+                                            projcount21=30
+                                            pjxl21=FIGx2-40
+                                            pjy21=FIGy2
+                                        if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj21==False
+                                            projcount21=30
+                                            pjxl21=FIGx2-40  
+                                            pjy21=FIGy2  
+                                        if pjxl21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj21==False
+                                            projcount21=30
+                                            pjxl21=FIGx2-40
+                                            pjy21=FIGy2
+                                        if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
+                                            pj21==False
+                                            projcount21=30
+                                            pjxl21=FIGx2-40  
+                                            pjy21=FIGy2  
+                                    else:
+                                        pj21=False
+                                        projcount21=30
+                                        pjxl21=FIGx2-40  
+                                        pjy21=FIGy2  
+                                    if pj22==True and projcount22>0 and lastl2==True:
+                                        pjxl22+=20
+                                        projcount22-=1
+                                        if pjxl22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                            pj22==False
+                                            projcount22=30
+                                            pjxl22=FIGx2-40
+                                            pjy22=FIGy2
+                                        if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj22==False
+                                            projcount22=30
+                                            pjxl22=FIGx2-40  
+                                            pjy22=FIGy2  
+                                        if pjxl22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj22==False
+                                            projcount22=30
+                                            pjxl22=FIGx2-40
+                                            pjy22=FIGy2
+                                        if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
+                                            pj22==False
+                                            projcount22=30
+                                            pjxl22=FIGx2-40  
+                                            pjy22=FIGy2  
+                                    else:
+                                        pj22=False
+                                        projcount22=30
+                                        pjxl22=FIGx2-40  
+                                        pjy22=FIGy2 
+                                    if pj23==True and projcount23>0 and lastl2==True:
+                                        pjxl23+=20
+                                        projcount23-=1
+                                        if pjxl23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                            pj23==False
+                                            projcount23=30
+                                            pjxl23=FIGx2-40
+                                            pjy23=FIGy2
+                                        if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj23==False
+                                            projcount23=30
+                                            pjxl23=FIGx2-40  
+                                            pjy23=FIGy2  
+                                        if pjxl23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj23==False
+                                            projcount23=30
+                                            pjxl23=FIGx2-40
+                                            pjy23=FIGy2
+                                        if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
+                                            pj23==False
+                                            projcount23=30
+                                            pjxl23=FIGx2-40  
+                                            pjy23=FIGy2  
+                                    else:
+                                        pj23=False
+                                        projcount23=30
+                                        pjxl23=FIGx2-40  
+                                        pjy23=FIGy2 
+                                    if pj24==True and projcount24>0 and lastl2==True:
+                                        pjxl24+=20
+                                        projcount24-=1
+                                        if pjxl24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                            pj24==False
+                                            projcount24=30
+                                            pjxl24=FIGx2-40
+                                            pjy24=FIGy2
+                                        if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
+                                            pj24==False
+                                            projcount24=30
+                                            pjxl24=FIGx2-40  
+                                            pjy24=FIGy2  
+                                        if pjxl24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
+                                            pj24==False
+                                            projcount24=30
+                                            pjxl24=FIGx2-40
+                                            pjy24=FIGy2
+                                        if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
+                                            pj24==False
+                                            projcount24=30
+                                            pjxl24=FIGx2-40  
+                                            pjy24=FIGy2  
+                                    else:
+                                        pj24=False
+                                        projcount24=30
+                                        pjxl24=FIGx2-40  
+                                        pjy24=FIGy2 
                             if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                 spped1=False
                                 pygame.time.delay(3000)

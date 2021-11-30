@@ -1468,7 +1468,7 @@ while run:
                                 projcount23=30
                                 pjy23=FIGy2+40  
                             if pj24==True and projcount24>0 and lastd2==True:
-                                pjy224+=20
+                                pjy24+=20
                                 projcount24-=1
                                 if pjy24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
                                     pj24==False
